@@ -1,0 +1,37 @@
+#
+# pppstats makefile
+#
+CROSS_COMPILE=
+CC=$(CROSS_COMPILE)cc
+COPTS=-O2 -g -pipe
+
+DESTDIR = $(INSTROOT)/usr/local
+BINDIR = $(DESTDIR)/sbin
+MANDIR = $(DESTDIR)/share/man/man8
+
+PPPSTATSRCS = pppstats.c
+PPPSTATOBJS = pppstats.o
+
+COMPILE_FLAGS = -I../include
+LIBS =
+
+INSTALL= install
+
+CFLAGS = $(COPTS) $(COMPILE_FLAGS)
+
+all: pppstats
+
+install: pppstats
+	-mkdir -p $(MANDIR)
+	$(INSTALL) -c pppstats $(BINDIR)
+	$(INSTALL) -c -m 444 pppstats.8 $(MANDIR)
+
+pppstats: $(PPPSTATSRCS)
+	$(CC) $(CFLAGS) $(LDFLAGS) -o pppstats pppstats.c $(LIBS)
+
+clean:
+	rm -f pppstats *~ #* core
+
+depend:
+	cpp -M $(CFLAGS) $(PPPSTATSRCS) >.depend
+#	makedepend $(CFLAGS) $(PPPSTATSRCS)
