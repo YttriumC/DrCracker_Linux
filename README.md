@@ -12,6 +12,8 @@
  ```
  ## 友情感谢
   - [mchome/dogcom](https://github.com/mchome/dogcom)
+ ## 友情连接
+  - [ppp-project/ppp](https://github.com/ppp-project/ppp)
 # 免责声明:
 ## 本项目仅供教学使用, 严禁用于商业用途.
 ## 特别指出禁止任何个人或者公司将 DrCracker 的代码投入商业使用，由此造成的后果和法律责任均与本人无关。
