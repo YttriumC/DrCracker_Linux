@@ -3,6 +3,7 @@
  - **通过重新编译pppd来达到添加“不可输入字符”（\r\n）的目的**
  - 使用前需安装 rp-pppoe(REHL|CentOS|Fedora...), 或pppoeconf(Debian|Ubuntu...)
  - 其实代码改动不大, 但是编译异常麻烦, 要解决各种依赖, 编译libpcap, openssl等等. pppd之前的代码里没有openssl的源码, 从Github找到后手动添加的.
+ - **不建议将其作为突破共享宽带限制使用**
  ## 使用方式
  ### dogcom.conf
  ```
